@@ -6,6 +6,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.HttpHeaders;
 
 import com.bharathippireddy.trainings.jaxrs.dto.Passenger;
@@ -31,8 +32,10 @@ public class PassengerService {
 	}
 
 	@GET
-	public PassengerList getPassengers(int start, int size, String agent, HttpHeaders headers) {
-
+	public PassengerList getPassengers(@QueryParam("start") int start, @QueryParam("size") int size, String agent,
+			HttpHeaders headers) {
+		System.out.println(start);
+		System.out.println(size);
 		return passengersList;
 	}
 
